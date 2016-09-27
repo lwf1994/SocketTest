@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,58 +19,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-4g-SeK">
-                                <frame key="frameInset" minY="56" width="736" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-1n-pYN">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZu-gq-vSB">
-                                        <frame key="frameInset" minX="351" minY="8" width="56" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="connect"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="am3-aI-KXf">
+                                        <gestureRecognizers/>
                                         <connections>
-                                            <action selector="connectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="awE-it-syf"/>
+                                            <outletCollection property="gestureRecognizers" destination="2eb-QH-Irg" appends="YES" id="RzO-ww-8WV"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ9-52-82s">
-                                        <frame key="frameInset" minX="362" minY="38" width="34" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="send"/>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Yz-iG-jh1">
-                                        <frame key="frameInset" minX="8" minY="8" width="170" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DLk-IR-JRq">
-                                        <frame key="frameInset" minX="225" minY="8" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-fC-xcf">
-                                        <frame key="frameInset" minX="8" minY="45" width="170" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.63167213426306634" blue="0.4070275558909402" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.63167213430000002" blue="0.4070275559" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="am3-aI-KXf" firstAttribute="leading" secondItem="uh9-1n-pYN" secondAttribute="leading" id="E1t-YX-EJ3"/>
+                                    <constraint firstItem="am3-aI-KXf" firstAttribute="top" secondItem="uh9-1n-pYN" secondAttribute="top" id="LS6-8t-P9P"/>
+                                    <constraint firstAttribute="bottom" secondItem="am3-aI-KXf" secondAttribute="bottom" id="LTi-df-HWf"/>
+                                    <constraint firstAttribute="trailing" secondItem="am3-aI-KXf" secondAttribute="trailing" id="Us6-3T-qYC"/>
+                                    <constraint firstAttribute="height" constant="377" id="iPd-Mw-Ma5"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgF-KO-mbM">
+                                <state key="normal" title="发送"/>
+                                <connections>
+                                    <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBs-xQ-XAp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-cS-RKP">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uh9-1n-pYN" secondAttribute="trailing" id="1ON-Oa-uGR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wcD-cS-RKP" secondAttribute="bottom" constant="269" id="36g-ja-0a7"/>
+                            <constraint firstItem="wcD-cS-RKP" firstAttribute="top" secondItem="uh9-1n-pYN" secondAttribute="bottom" constant="60" id="65t-Fb-BmU"/>
+                            <constraint firstItem="fgF-KO-mbM" firstAttribute="top" secondItem="uh9-1n-pYN" secondAttribute="bottom" constant="59" id="Bbn-E6-rZE"/>
+                            <constraint firstItem="fgF-KO-mbM" firstAttribute="leading" secondItem="wcD-cS-RKP" secondAttribute="trailing" constant="94" id="Cgm-Ex-2a6"/>
+                            <constraint firstItem="uh9-1n-pYN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VCx-si-Tax"/>
+                            <constraint firstItem="fgF-KO-mbM" firstAttribute="leading" secondItem="wcD-cS-RKP" secondAttribute="trailing" constant="94" id="c41-13-qUf"/>
+                            <constraint firstItem="wcD-cS-RKP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="fj5-Ri-5eY"/>
+                            <constraint firstItem="uh9-1n-pYN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ium-vU-3HA"/>
+                            <constraint firstAttribute="trailing" secondItem="fgF-KO-mbM" secondAttribute="trailing" constant="43" id="rea-jy-4dx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fgF-KO-mbM" secondAttribute="bottom" constant="270" id="sju-NB-9Y6"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="IPtextfield" destination="0Yz-iG-jh1" id="poa-9o-4eT"/>
-                        <outlet property="contextTextField" destination="T0F-fC-xcf" id="DrO-mf-qao"/>
-                        <outlet property="duanKouTextField" destination="DLk-IR-JRq" id="rkn-5U-c6l"/>
-                        <outlet property="sendButton" destination="cZ9-52-82s" id="8Rg-JK-gqi"/>
+                        <outlet property="bottomView" destination="uh9-1n-pYN" id="4DY-QB-vYs"/>
+                        <outlet property="myImageView" destination="am3-aI-KXf" id="aeh-sa-xdb"/>
+                        <outlet property="myTextField" destination="wcD-cS-RKP" id="Stj-Ca-hdQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2eb-QH-Irg">
+                    <connections>
+                        <action selector="pickPhoto:" destination="BYZ-38-t0r" id="g5l-6y-S4K"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="121.46739130434784"/>
         </scene>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C735341D1D97D83A0029C749 /* WFSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C735341C1D97D83A0029C749 /* WFSocket.m */; };
 		C78CA29C1D950ACC00FDD43A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C78CA29B1D950ACC00FDD43A /* main.m */; };
 		C78CA29F1D950ACC00FDD43A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C78CA29E1D950ACC00FDD43A /* AppDelegate.m */; };
 		C78CA2A21D950ACC00FDD43A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78CA2A11D950ACC00FDD43A /* ViewController.m */; };
@@ -16,6 +17,11 @@
 		C78CA2AD1D950ACC00FDD43A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78CA2AB1D950ACC00FDD43A /* LaunchScreen.storyboard */; };
 		C78CA2B81D950ACD00FDD43A /* SocketTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C78CA2B71D950ACD00FDD43A /* SocketTestTests.m */; };
 		C78CA2C31D950ACD00FDD43A /* SocketTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C78CA2C21D950ACD00FDD43A /* SocketTestUITests.m */; };
+		C7E7979E1D9A8CAB000B0665 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E7979B1D9A8CAB000B0665 /* AsyncSocket.m */; };
+		C7E7979F1D9A8CAB000B0665 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E7979D1D9A8CAB000B0665 /* AsyncUdpSocket.m */; };
+		C7E797A41D9A8DAC000B0665 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E797A11D9A8DAC000B0665 /* GCDAsyncSocket.m */; };
+		C7E797A51D9A8DAC000B0665 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E797A31D9A8DAC000B0665 /* GCDAsyncUdpSocket.m */; };
+		C7E797A81D9A8DC6000B0665 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E797A71D9A8DC6000B0665 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C735341B1D97D83A0029C749 /* WFSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSocket.h; sourceTree = "<group>"; };
+		C735341C1D97D83A0029C749 /* WFSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFSocket.m; sourceTree = "<group>"; };
 		C78CA2971D950ACC00FDD43A /* SocketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78CA29B1D950ACC00FDD43A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C78CA29D1D950ACC00FDD43A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +61,15 @@
 		C78CA2BE1D950ACD00FDD43A /* SocketTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocketTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78CA2C21D950ACD00FDD43A /* SocketTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketTestUITests.m; sourceTree = "<group>"; };
 		C78CA2C41D950ACD00FDD43A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7E7979A1D9A8CAB000B0665 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		C7E7979B1D9A8CAB000B0665 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		C7E7979C1D9A8CAB000B0665 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		C7E7979D1D9A8CAB000B0665 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		C7E797A01D9A8DAC000B0665 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		C7E797A11D9A8DAC000B0665 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		C7E797A21D9A8DAC000B0665 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		C7E797A31D9A8DAC000B0665 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		C7E797A71D9A8DC6000B0665 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E797A81D9A8DC6000B0665 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +105,7 @@
 				C78CA2B61D950ACD00FDD43A /* SocketTestTests */,
 				C78CA2C11D950ACD00FDD43A /* SocketTestUITests */,
 				C78CA2981D950ACC00FDD43A /* Products */,
+				C7E797A61D9A8DC5000B0665 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +122,20 @@
 		C78CA2991D950ACC00FDD43A /* SocketTest */ = {
 			isa = PBXGroup;
 			children = (
+				C7E7979A1D9A8CAB000B0665 /* AsyncSocket.h */,
+				C7E7979B1D9A8CAB000B0665 /* AsyncSocket.m */,
+				C7E7979C1D9A8CAB000B0665 /* AsyncUdpSocket.h */,
+				C7E7979D1D9A8CAB000B0665 /* AsyncUdpSocket.m */,
 				C78CA29D1D950ACC00FDD43A /* AppDelegate.h */,
 				C78CA29E1D950ACC00FDD43A /* AppDelegate.m */,
 				C78CA2A01D950ACC00FDD43A /* ViewController.h */,
 				C78CA2A11D950ACC00FDD43A /* ViewController.m */,
+				C7E797A01D9A8DAC000B0665 /* GCDAsyncSocket.h */,
+				C7E797A11D9A8DAC000B0665 /* GCDAsyncSocket.m */,
+				C7E797A21D9A8DAC000B0665 /* GCDAsyncUdpSocket.h */,
+				C7E797A31D9A8DAC000B0665 /* GCDAsyncUdpSocket.m */,
+				C735341B1D97D83A0029C749 /* WFSocket.h */,
+				C735341C1D97D83A0029C749 /* WFSocket.m */,
 				C78CA2A31D950ACC00FDD43A /* Main.storyboard */,
 				C78CA2A91D950ACC00FDD43A /* Assets.xcassets */,
 				C78CA2AB1D950ACC00FDD43A /* LaunchScreen.storyboard */,
@@ -141,6 +170,14 @@
 				C78CA2C41D950ACD00FDD43A /* Info.plist */,
 			);
 			path = SocketTestUITests;
+			sourceTree = "<group>";
+		};
+		C7E797A61D9A8DC5000B0665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7E797A71D9A8DC6000B0665 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,10 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E797A41D9A8DAC000B0665 /* GCDAsyncSocket.m in Sources */,
+				C7E797A51D9A8DAC000B0665 /* GCDAsyncUdpSocket.m in Sources */,
+				C735341D1D97D83A0029C749 /* WFSocket.m in Sources */,
 				C78CA2A81D950ACC00FDD43A /* SocketTest.xcdatamodeld in Sources */,
 				C78CA2A21D950ACC00FDD43A /* ViewController.m in Sources */,
+				C7E7979E1D9A8CAB000B0665 /* AsyncSocket.m in Sources */,
 				C78CA29F1D950ACC00FDD43A /* AppDelegate.m in Sources */,
 				C78CA29C1D950ACC00FDD43A /* main.m in Sources */,
+				C7E7979F1D9A8CAB000B0665 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +560,7 @@
 				C78CA2C91D950ACD00FDD43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C78CA2CA1D950ACD00FDD43A /* Build configuration list for PBXNativeTarget "SocketTestTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +569,7 @@
 				C78CA2CC1D950ACD00FDD43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C78CA2CD1D950ACD00FDD43A /* Build configuration list for PBXNativeTarget "SocketTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +578,7 @@
 				C78CA2CF1D950ACD00FDD43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

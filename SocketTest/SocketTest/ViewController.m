@@ -10,14 +10,34 @@
 #import <sys/socket.h> // socket相关
 #import <netinet/in.h> // internet相关
 #import <arpa/inet.h> // 地址解析协议相关
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *contextTextField;
-- (IBAction)connectButton:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *sendButton;
-@property (weak, nonatomic) IBOutlet UITextField *IPtextfield;
-@property (weak, nonatomic) IBOutlet UITextField *duanKouTextField;
+#import "AsyncSocket.h"
+#import "AsyncUdpSocket.h"
+#import "GCDAsyncSocket.h"
+typedef NS_ENUM(NSInteger,socketSendType) {
+    socketSendTypeNone  = 0,
+    socketSendTypeText  = 1 << 1,
+    socketSendTypeImage = 1 << 2
+    
+};
 
-@property (nonatomic, assign) int socketID;
+@interface ViewController ()<GCDAsyncSocketDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *myTextField;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+- (IBAction)sendButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
+- (IBAction)pickPhoto:(id)sender;
+
+@property (nonatomic, assign) int socketClientId;
+
+@property (nonatomic, retain) AsyncSocket *socket;
+
+@property (nonatomic, retain) GCDAsyncSocket *gcdSocket;
+
+@property (nonatomic, assign) BOOL sucess;
+
+
+
+
 @end
 
 @implementation ViewController
@@ -25,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.socketID = socket(AF_INET, SOCK_STREAM, 0);
+    
 }
 
 - (void)socket {
@@ -51,9 +71,9 @@
      返回值 
      0 成功
      */
-    struct sockaddr_in addr;
-    socklen_t addrLen = size
-    connect(_socketID, &addr, <#socklen_t#>)
+//    struct sockaddr_in addr;
+//    socklen_t addrLen = size
+//    connect(_socketID, &addr, <#socklen_t#>)
     // 发送数据
 //    send(int, const void *, size_t, int);
     /**
@@ -88,11 +108,57 @@
 }
 
 
-- (IBAction)connect:(id)sender {
+- (IBAction)pickPhoto:(id)sender {
+    self.socketClientId = socket(AF_INET, SOCK_STREAM, 0);
+    self.sucess = (_socketClientId > 0);
+    int error = -1;
+    struct sockaddr_in addr;
+    
+    
+    
+    if (_sucess) {
+        NSLog(@"链接Socket成功！");
+        // 初始化
+        memset(&addr, 0, sizeof(addr));
+        addr.sin_len = sizeof(addr);
+        addr.sin_family = AF_INET;
+        
+        // 监听任何IP地址
+        addr.sin_addr.s_addr = INADDR_ANY;
+        
+        // 绑定端口号；
+        error = bind(_socketClientId, (const struct sockaddr *)&addr, sizeof(addr));
+        _sucess = (error == 0);
+    }
+}
+- (IBAction)sendButton:(id)sender {
+    
+    // 1. 创建Socket
+    NSLog(@"click button");
+//    self.socket = [[AsyncSocket alloc] initWithDelegate:self];
+//    NSError *error = nil;
+//    if (![_socket connectToHost:@"192.168.1.200" onPort:8080 error:&error]) {
+//        NSLog(@"error: %@", error);
+//    }
+
+    self.gcdSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    NSError *error = nil;
+    BOOL success = [_gcdSocket connectToHost:@"192.168.1.200" onPort:8080 error:&error];
+    if (success) {
+        NSLog(@"创建链接成功");
+    } else {
+        NSLog(@"创建连接失败");
+    }
+    
+    
 }
 
-- (IBAction)send:(id)sender {
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+    NSLog(@"did connect to host");
 }
-- (IBAction)connectButton:(id)sender {
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+//    if () {
+//        <#statements#>
+//    }
 }
 @end
